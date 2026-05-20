@@ -6,38 +6,74 @@
 // Siga os comentários para implementar cada parte do desafio.
 
 int main() {
-    // Definição das variáveis para armazenar as propriedades das cidades
-    // Você pode utilizar o código do primeiro desafio
-
+// Definição das variáveis para armazenar as propriedades das cidades
+    char estadoA; //Variável de Estado, cidade A
+    char codigoA[4]; //Variável de código, cidade A
+    char cidadeA[50]; //Variável de nome da cidade A
+    int populaA, turismoA; //Variáveis de população e pontos turísticos, cidade A
+    float areaA, pibA, densiA, pibperA, superA; //Variáveis de área, desidade populacional, PIB, PIB per capita e super poder da cidade A
+ 
+    char estadoB; //Variável de Estado, cidade B
+    char codigoB[4]; //Variável de código, cidade B
+    char cidadeB[50]; //Variável de nome da cidade B
+    int populaB, turismoB; //Variáveis de população e pontos turísticos, cidade B
+    float areaB, pibB, densiB, pibperB, superB; //Variáveis de área e PIB, desidade populacional, PIB per capita e super poder da cidade B
     
-    // Cadastro das Cartas:
-    // Implemente a lógica para solicitar ao usuário que insira os dados das cidades
-    // utilizando a função scanf para capturar as entradas.
-    // utilize o código do primeiro desafio
+// Cadastro das Cartas:
+    printf("Para a carta A:\n"); //Cadastro das informações, carta A
+    printf("Entre com o estado, de A a H:\n");
+    scanf(" %c", &estadoA);
+    printf("Entre com o codigo da carta (ex.: A01):\n");
+    scanf("%s", codigoA);
+    printf("Entre com o nome da cidade:\n");
+    scanf(" %[^\n]", cidadeA);
+    printf("Entre com a populacao:\n");
+    scanf("%d", &populaA);
+    printf("Entre com a area (em km quadrados):\n");
+    scanf("%f", &areaA);
+    printf("Entre com o PIB da cidade:\n");
+    scanf("%f", &pibA);
+    printf("Entre com o numero de pontos turisticos:\n");
+    scanf("%d", &turismoA);
 
-    // Exemplo:
-    // printf("Digite o código da cidade: ");
-    // scanf("%s", codigo);
-    // 
-    // (Repita para cada propriedade)
+    printf("Para a carta B:\n"); //Cadastro das informações, carta B
+    printf("Entre com o estado, de A a H:\n");
+    scanf(" %c", &estadoB);
+    printf("Entre com o codigo da carta (ex.: A01):\n");
+    scanf("%s", codigoB);
+    printf("Entre com o nome da cidade:\n");
+    scanf(" %[^\n]", cidadeB);
+    printf("Entre com a populacao:\n");
+    scanf("%d", &populaB);
+    printf("Entre com a area (em km quadrados):\n");
+    scanf("%f", &areaB);
+    printf("Entre com o PIB da cidade:\n");
+    scanf("%f", &pibB);
+    printf("Entre com o numero de pontos turisticos:\n");
+    scanf("%d", &turismoB);
 
-    // Comparação de Cartas:
-    // Desenvolva a lógica de comparação entre duas cartas.
-    // Utilize estruturas de decisão como if, if-else para comparar atributos como população, área, PIB, etc.
+//Cálculo de densidade populacional
+    densiA = populaA/areaA;
+    densiB = populaB/areaB;
 
-    // Exemplo:
-    // if (populacaoA > populacaoB) {
-    //     printf("Cidade 1 tem maior população.\n");
-    // } else {
-    //     printf("Cidade 2 tem maior população.\n");
-    // }
+//Cálculo de pib per capita
+    pibperA = (pibA*1000000000)/populaA;
+    pibperB = (pibB*1000000000)/populaB;
 
-    // Exibição dos Resultados:
-    // Após realizar as comparações, exiba os resultados para o usuário.
-    // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
+//Cálculo de super poder
+    superA = (float)populaA + areaA + (pibA*1000000000) + (float)turismoA + pibperA + (1/densiA);
+    superB = (float)populaB + areaB + (pibB*1000000000) + (float)turismoB + pibperB + (1/densiB);
 
-    // Exemplo:
-    // printf("A cidade vencedora é: %s\n", cidadeVencedora);
+//Comparação e impressão em tela dos atributos
+    printf("\n***Comparação de populacao:\n");
+    printf("Carta 1 - São Paulo (SP): %d\n", populaA);
+    printf("Carta 2 - Rio de Janeiro (RJ): %d\n", populaB);
+    printf("Resultado:");
+    if(populaA>populaB){
+      printf("Carta 1 (São Paulo) venceu!\n");
+    }else{
+      printf("Carta 2 (Rio de Janeiro) venceu!\n");
+    }
 
     return 0;
 }
