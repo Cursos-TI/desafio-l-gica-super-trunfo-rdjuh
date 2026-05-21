@@ -11,7 +11,7 @@ int main() {
   float areaA = 1521.11;
   float pibA = 828.9;
   int turismoA = 50;
-  float densidadeA = populacaoA / areaA;
+  float densidadeA = (float)populacaoA / areaA;
 
   //char estadoB = 'B';
   //char codigoB[4] = "B01";
@@ -20,7 +20,7 @@ int main() {
   float areaB = 1200.33;
   float pibB = 360.0;
   int turismoB = 30;
-  float densidadeB = populacaoB / areaB;
+  float densidadeB = (float)populacaoB / areaB;
 
   //Variáveis suporte
   int opt1, opt2; //Armazena a escolha
@@ -61,8 +61,8 @@ int main() {
             valorB1 = turismoB;
             break;
         case 5:
-            valorA1 = 1 / densidadeA;
-            valorB1 = 1 / densidadeB;
+            valorA1 = (1 / densidadeA) * 1000000000;
+            valorB1 = (1 / densidadeB) * 1000000000;
             break;
         default:
             printf("\nOpcao invalida!\n");
@@ -101,8 +101,8 @@ int main() {
             valorB2 = turismoB;
             break;
         case 5:
-            valorA2 = 1 / densidadeA;
-            valorB2 = 1 / densidadeB;
+            valorA2 = (1 / densidadeA) * 1000000000;
+            valorB2 = (1 / densidadeB) * 1000000000;
             break;
         default:
             printf("\nOpcao invalida!\n");
